@@ -1,4 +1,4 @@
-.new-expense__controls {
+.newExpenseControls {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
@@ -6,48 +6,54 @@
   text-align: left;
 }
 
-.new-expense__control label {
+.newExpenseControls label {
   font-weight: bold;
   margin-bottom: 0.5rem;
   display: block;
 }
 
-.new-expense__control input {
+.newExpenseControls input {
   font: inherit;
   padding: 0.5rem;
   border-radius: 6px;
   border: 1px solid #ccc;
-  width: 20rem;
+  width: 15rem;
   max-width: 100%;
 }
 
-.new-expense__actions {
+.newExpenseActions {
   text-align: right;
 }
 
-.new-expense__control.invalidTitleInput input {
+.newExpenseControls.invalidTitleInput input {
   background: coral;
   border-color: crimson;
 }
 
-.new-expense__control.invalidTitleInput label {
+.newExpenseControls.invalidTitleInput label {
   color: red;
 }
 
-.new-expense__control.invalidAmountInput input {
+.newExpenseControls.invalidAmountInput input {
   background: coral;
   border-color: crimson;
 }
 
-.new-expense__control.invalidAmountInput label {
+.newExpenseControls.invalidAmountInput label {
   color: red;
 }
 
-.new-expense__control.invalidDateInput input {
+.newExpenseControls.invalidDateInput input {
   background: coral;
   border-color: crimson;
 }
 
-.new-expense__control.invalidDateInput label {
+.newExpenseControls.invalidDateInput label {
   color: red;
+}
+
+@media (min-width:768px){
+  .button{
+    width:auto;
+  }
 }

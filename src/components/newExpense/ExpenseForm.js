@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./ExpenseForm.css";
+import styles from "./ExpenseForm.module.css";
 
 const ExpenseForm = (props) => {
   const [enteredTitle, setEnteredTitle] = useState("");
@@ -39,8 +39,8 @@ const ExpenseForm = (props) => {
     if (enteredDate === "") {
       setIsValidDateInput(false);
     }
-    
-    if(enteredTitle === "" || enteredAmount === "" || enteredDate === ""){
+
+    if (enteredTitle === "" || enteredAmount === "" || enteredDate === "") {
       return;
     }
 
@@ -63,10 +63,10 @@ const ExpenseForm = (props) => {
 
   return (
     <form onSubmit={submitHandler}>
-      <div className="new-expense__controls">
+      <div className={styles.newExpenseControls}>
         <div
-          className={`new-expense__control ${
-            !isValidTitleInput ? "invalidTitleInput" : ""
+          className={`${styles.newExpenseControls} ${
+            !isValidTitleInput && styles.invalidTitleInput
           }`}
         >
           <label>Title</label>
@@ -78,8 +78,8 @@ const ExpenseForm = (props) => {
         </div>
 
         <div
-          className={`new-expense__control ${
-            !isValidAmountInput ? "invalidAmountInput" : ""
+          className={`${styles.newExpenseControls} ${
+            !isValidAmountInput && styles.invalidAmountInput
           }`}
         >
           <label>Amount</label>
@@ -93,8 +93,8 @@ const ExpenseForm = (props) => {
         </div>
 
         <div
-          className={`new-expense__control ${
-            !isValidDateInput ? "invalidDateInput" : ""
+          className={`${styles.newExpenseControls} ${
+            !isValidDateInput && styles.invalidDateInput
           }`}
         >
           <label>Date</label>
@@ -109,12 +109,12 @@ const ExpenseForm = (props) => {
       </div>
       <button
         type="button"
-        className="new-expense__actions"
+        className={styles.newExpenseActions}
         onClick={stopEditing}
       >
         Cancel
       </button>
-      <button type="submit" className="new-expense__actions">
+      <button type="submit" className={styles.newExpenseActions}>
         Add Expense
       </button>
     </form>
